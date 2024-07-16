@@ -4,7 +4,7 @@ var Nightmare = require('nightmare');
 var expect = require('chai').expect;
 
 const app = express();
-app.use(express.static(path.join(__dirname, '/../')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.listen(8888);
 
 const url = 'http://localhost:8888';

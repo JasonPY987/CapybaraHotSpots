@@ -1,0 +1,84 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #121212; /* Dark background for the whole page */
+    color: #ccc; /* Light grey text for contrast */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff; /* White color for headings */
+    margin: 30px 0;
+}
+
+button {
+    background: linear-gradient(145deg, #0d6efd, #1e90ff); /* Gradient blue background */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    transition: transform 0.2s ease, background 0.3s ease; /* Smooth transform on press */
+    cursor: pointer;
+    outline: none; /* Remove focus border */
+}
+
+button:hover {
+    background: linear-gradient(145deg, #1e90ff, #0d6efd);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e; /* Dark color for the table */
+    color: #ccc; /* Light grey text */
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #333; /* Darker borders for less visual harshness */
+}
+
+th {
+    background-color: #2c3e50; /* Deep blue for headers */
+    color: white;
+    font-size: 18px;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a; /* Even darker row background for stripe effect */
+}
+
+a {
+    color: #1e90ff; /* Bright blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0d6efd; /* Darker blue on hover */
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 30px; /* Larger margin for better layout separation */
+}
+
+/* Add more styles for overall alignment and spacing */
+div.container {
+    max-width: 1200px; /* Limiting maximum width for larger screens */
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Subtle shadow around the content area */
+}
+
+.hidden {
+    display: none;
+} /* hidden placeholder!
