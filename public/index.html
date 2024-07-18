@@ -5,30 +5,44 @@
     <title>San Diego Top Spots</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
     <h1>San Diego Top Spots</h1>
     <div id="map" style="height: 500px; width: 100%;"></div>
-    <button id="toggleDistance" onclick="toggleDistanceUnit()">Show in Miles</button>
-    <table id="top-spots-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Link</th>
-                <th id="distance-header">Distance (km)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="hidden">
-                <td>Go For A Run In The San Diego Zoo Safari Park</td>
-                <td>This is a placeholder description</td>
-                <td><a href="https://www.google.com/maps?q=32.7157,-117.1611" target="_blank">Open in Google Maps</a></td>
-                <td>0.00 km</td>
-            </tr>
-            <!-- Rows will be dynamically added here -->
-        </tbody>
-    </table>
-    <script src="main.js"></script>
+    <div class="button-container">
+        <div class="left-buttons">
+            <button id="showSanDiego">San Diego Spots</button>
+            <button id="showCapybara"> Capybara Spots</button>
+        </div>
+        <button id="toggleDistance" onclick="toggleDistanceUnit()"> Miles</button>
+    </div>
+    <div class="scrollable-table-container">
+        <table id="top-spots-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                    <th id="distance-header">Distance (km)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hidden">
+                    <td>Go For A Run In The San Diego Zoo Safari Park</td>
+                    <td>This is a placeholder description</td>
+                    <td><a href="https://www.google.com/maps?q=32.7157,-117.1611" target="_blank">Open in Google Maps</a></td>
+                    <td>0.00 km</td>
+                </tr>
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Capybara Info Section -->
+    <div id="capybara-info">
+        <h2>Learn About Capybaras!</h2>
+        <p id="capybara-fact">Random Capybara Fact: Capybaras are the largest rodents in the world!</p>
+        <button onclick="generateRandomFact()">Get Another Fact</button>
+    </div>
 </body>
 </html>

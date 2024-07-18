@@ -1,11 +1,20 @@
 $(document).ready(function () {
   fetchApiKey();
+
+  $('#showSanDiego').on('click', function() {
+    fetchTopSpots(map, 'data.json', false);
+  });
+
+  $('#showCapybara').on('click', function() {
+    fetchTopSpots(map, 'capy.json', true);
+  });
 });
+
+let map;
 
 function fetchApiKey() {
   $.getJSON('/api-key', function (data) {
     const apiKey = data.apiKey;
-    console.log("API Key:", apiKey); // Add this line to debug
     loadGoogleMapsApi(apiKey);
   }).fail(function (jqxhr, textStatus, error) {
     console.error("Error fetching API key:", textStatus, error);
@@ -21,21 +30,20 @@ function loadGoogleMapsApi(apiKey) {
 }
 
 function initializeMap() {
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 12,
-    center: { lat: 32.7157, lng: -117.1611 }, // Center map on San Diego
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10, // Adjust zoom level as needed
+    center: { lat: 32.7157, lng: -117.1611 } // Center map on San Diego
   });
-  console.log("Map Initialized"); // Add this line to debug
-  fetchTopSpots(map);
+  fetchTopSpots(map, 'data.json', false); // Load San Diego data by default
 }
 
-function fetchTopSpots(map) {
-  $.getJSON("data.json", function (data) {
-    console.log("Data Fetched:", data); // Add this line to debug
+function fetchTopSpots(map, dataFile, isCapybaraLocation) {
+  $.getJSON(dataFile, function (data) {
     const tableBody = $("#top-spots-table tbody");
-    tableBody.find('.hidden').remove(); // Remove the placeholder row
+    tableBody.empty(); // Clear existing rows
     if (data && data.length > 0) {
-      data.forEach((spot) => addSpotToTable(spot, map, tableBody));
+      const limitedData = data.slice(0, 30);
+      limitedData.forEach((spot) => addSpotToTable(spot, map, tableBody, isCapybaraLocation));
       sortTableByDistance();
     } else {
       console.error("No data found");
@@ -45,10 +53,9 @@ function fetchTopSpots(map) {
   });
 }
 
-
-function addSpotToTable(spot, map, tableBody) {
+function addSpotToTable(spot, map, tableBody, isCapybaraLocation) {
   const spotLatLng = new google.maps.LatLng(spot.location[0], spot.location[1]);
-  const userLatLng = new google.maps.LatLng(32.7157, -117.1611); // San Diego's coordinates
+  const userLatLng = new google.maps.LatLng(32.7157, -117.1611); // San Diego's coordinates for distance calculation
   const distanceKm =
     google.maps.geometry.spherical.computeDistanceBetween(
       userLatLng,
@@ -66,32 +73,22 @@ function addSpotToTable(spot, map, tableBody) {
   row.append(`<td data-km="${distanceKm.toFixed(2)}" data-mi="${distanceMi.toFixed(2)}">${formattedDistance}</td>`);
   tableBody.append(row);
 
-  console.log("Row Added:", row); // Add this line to debug
-
-  addMarker(spot, spotLatLng, map);
+  addMarker(spot, spotLatLng, map, isCapybaraLocation);
 }
 
-function addMarker(spot, spotLatLng, map) {
+function addMarker(spot, spotLatLng, map, isCapybaraLocation) {
+  const icon = isCapybaraLocation ? {
+    url: 'assets/CapybarapinRMVD.png', // Path to your capybara icon
+    scaledSize: new google.maps.Size(50, 50), // Initial size of the icon
+    origin: new google.maps.Point(0, 0),
+    anchor: new google.maps.Point(25, 50) // Anchor the icon at the bottom center
+  } : null;
+
   const marker = new google.maps.Marker({
     position: spotLatLng,
     map: map,
     title: spot.name,
-  });
-
-  const infoWindow = new google.maps.InfoWindow({
-    content: spot.description,
-  });
-
-  marker.addListener("mouseover", () => infoWindow.open(map, marker));
-  marker.addListener("mouseout", () => infoWindow.close());
-
-  console.log("Marker Added:", marker); // Add this line to debug
-}
-function addMarker(spot, spotLatLng, map) {
-  const marker = new google.maps.Marker({
-    position: spotLatLng,
-    map: map,
-    title: spot.name,
+    icon: icon
   });
 
   const infoWindow = new google.maps.InfoWindow({
@@ -114,7 +111,7 @@ function sortTableByDistance() {
 
 function toggleDistanceUnit() {
   const isKm = currentUnit === "km";
-  $("#toggleDistance").text(isKm ? "Show in Miles" : "Show in Kilometers");
+  $("#toggleDistance").text(isKm ? "Miles" : "Kilometers");
   $("#distance-header").text(isKm ? "Distance (mi)" : "Distance (km)");
   currentUnit = isKm ? "mi" : "km";
   $("#top-spots-table tbody tr").each(function () {
@@ -126,4 +123,17 @@ function toggleDistanceUnit() {
 }
 
 var currentUnit = "km"; // Default unit
-//script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCFtR8QPPiSS0X82DF0R6Zm1iCS8c4PN_A&libraries=geometry&callback=initializeMap";
+
+// Capybara Fun Facts
+const capybaraFacts = [
+  "Capybaras are the largest rodents in the world!",
+  "Capybaras are social animals and live in groups.",
+  "Capybaras can stay underwater for up to five minutes.",
+  "Capybaras' teeth grow continuously throughout their life.",
+  "Capybaras are excellent swimmers and can sleep in water."
+];
+
+function generateRandomFact() {
+  const randomIndex = Math.floor(Math.random() * capybaraFacts.length);
+  document.getElementById("capybara-fact").textContent = capybaraFacts[randomIndex];
+}

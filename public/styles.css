@@ -19,11 +19,32 @@ button {
     border: none;
     padding: 12px 24px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 20px; /* More rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
     transition: transform 0.2s ease, background 0.3s ease; /* Smooth transform on press */
     cursor: pointer;
     outline: none; /* Remove focus border */
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0;
+}
+
+button:hover::before {
+    width: 400%;
+    height: 400%;
+    opacity: 1;
 }
 
 button:hover {
@@ -32,8 +53,7 @@ button:hover {
 }
 
 table {
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
     border-collapse: collapse;
     background-color: #1e1e1e; /* Dark color for the table */
     color: #ccc; /* Light grey text */
@@ -81,4 +101,20 @@ div.container {
 
 .hidden {
     display: none;
-} /* hidden placeholder!
+} /* hidden placeholder */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.left-buttons {
+    display: flex;
+    gap: 10px;
+}
+.scrollable-table-container {
+    max-height: 500px; /* Adjust this size */
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 90%;
+}

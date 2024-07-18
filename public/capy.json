@@ -1,0 +1,152 @@
+[
+    {
+      "name": "San Diego Zoo",
+      "description": "The San Diego Zoo houses a variety of species, including the fascinating capybara. Visit the zoo to learn more about these unique rodents!",
+      "location": [32.7353, -117.1490]
+    },
+    {
+      "name": "Los Angeles Zoo",
+      "description": "The Los Angeles Zoo features capybaras in a naturalistic setting, allowing visitors to observe their social behaviors and swimming skills.",
+      "location": [34.1480, -118.2854]
+    },
+    {
+      "name": "Bronx Zoo",
+      "description": "The Bronx Zoo in New York is home to capybaras, the world's largest rodents. Discover their habits and lifestyles during your visit.",
+      "location": [40.8529, -73.8723]
+    },
+    {
+      "name": "Smithsonian's National Zoo",
+      "description": "Located in Washington, D.C., the Smithsonian's National Zoo has a capybara exhibit where you can learn about these gentle giants.",
+      "location": [38.9296, -77.0498]
+    },
+    {
+      "name": "Houston Zoo",
+      "description": "The Houston Zoo's capybara exhibit showcases these water-loving creatures in a habitat designed to mimic their natural environment.",
+      "location": [29.7143, -95.3909]
+    },
+    {
+      "name": "San Francisco Zoo",
+      "description": "Visit the San Francisco Zoo to see capybaras and learn about their behaviors, diet, and social structures.",
+      "location": [37.7340, -122.5030]
+    },
+    {
+      "name": "Denver Zoo",
+      "description": "The Denver Zoo offers a capybara exhibit where you can observe these large rodents in a setting that mimics their natural habitat.",
+      "location": [39.7505, -104.9497]
+    },
+    {
+      "name": "Lincoln Park Zoo",
+      "description": "Located in Chicago, the Lincoln Park Zoo features capybaras among its many exhibits. Learn about their unique adaptations and lifestyles.",
+      "location": [41.9211, -87.6339]
+    },
+    {
+      "name": "Miami Zoo",
+      "description": "The Miami Zoo includes a capybara exhibit where visitors can watch these fascinating creatures in action.",
+      "location": [25.6110, -80.3990]
+    },
+    {
+      "name": "Dallas Zoo",
+      "description": "The Dallas Zoo's capybara exhibit provides a glimpse into the lives of these large, social rodents. Learn more about their habitats and behaviors.",
+      "location": [32.7380, -96.8141]
+    },
+    {
+      "name": "Toronto Zoo",
+      "description": "The Toronto Zoo features a diverse range of species, including capybaras. Explore their exhibit and learn about their natural habitats.",
+      "location": [43.8177, -79.1859]
+    },
+    {
+      "name": "Zoo Atlanta",
+      "description": "Zoo Atlanta's capybara exhibit allows visitors to observe these gentle giants up close and learn about their unique behaviors.",
+      "location": [33.7340, -84.3729]
+    },
+    {
+      "name": "Edinburgh Zoo",
+      "description": "Located in Scotland, Edinburgh Zoo is home to capybaras and many other exotic animals. Visit to learn more about these fascinating creatures.",
+      "location": [55.9411, -3.2682]
+    },
+    {
+      "name": "Taronga Zoo",
+      "description": "Sydney's Taronga Zoo features capybaras in an exhibit designed to educate visitors about their habitats and behaviors.",
+      "location": [-33.8474, 151.2413]
+    },
+    {
+      "name": "London Zoo",
+      "description": "The London Zoo has a capybara exhibit where you can discover more about the world's largest rodent.",
+      "location": [51.5353, -0.1551]
+    },
+    {
+      "name": "Berlin Zoological Garden",
+      "description": "Berlin's Zoological Garden features capybaras among its many exhibits. Learn about their lifestyle and natural environment.",
+      "location": [52.5074, 13.3372]
+    },
+    {
+      "name": "Singapore Zoo",
+      "description": "The Singapore Zoo's capybara exhibit provides a unique opportunity to learn about these social and water-loving animals.",
+      "location": [1.4043, 103.7930]
+    },
+    {
+      "name": "Beijing Zoo",
+      "description": "Beijing Zoo has a capybara exhibit where visitors can observe these fascinating creatures and learn about their behaviors.",
+      "location": [39.9375, 116.3396]
+    },
+    {
+      "name": "Melbourne Zoo",
+      "description": "Melbourne Zoo in Australia features capybaras in an exhibit that showcases their natural habitat and behaviors.",
+      "location": [-37.7840, 144.9510]
+    },
+    {
+      "name": "Buenos Aires Eco-Park",
+      "description": "Located in Argentina, the Buenos Aires Eco-Park includes a capybara exhibit where you can learn about these gentle giants.",
+      "location": [-34.5751, -58.4146]
+    },
+    {
+      "name": "Nagoya Higashiyama Zoo",
+      "description": "This zoo in Japan features a capybara exhibit that educates visitors on their natural habitat and behaviors.",
+      "location": [35.1626, 136.9860]
+    },
+    {
+      "name": "Wellington Zoo",
+      "description": "New Zealand's Wellington Zoo includes a capybara exhibit where you can learn more about these large rodents.",
+      "location": [-41.3195, 174.7790]
+    },
+    {
+      "name": "Perth Zoo",
+      "description": "Perth Zoo in Australia features capybaras and offers insights into their social structure and aquatic abilities.",
+      "location": [-31.9697, 115.8719]
+    },
+    {
+      "name": "Auckland Zoo",
+      "description": "Auckland Zoo in New Zealand showcases capybaras in an environment that mimics their natural habitat.",
+      "location": [-36.8606, 174.7197]
+    },
+    {
+      "name": "Prague Zoo",
+      "description": "The Prague Zoo has a capybara exhibit where visitors can learn about these fascinating creatures and their behaviors.",
+      "location": [50.1167, 14.4119]
+    },
+    {
+      "name": "Budapest Zoo",
+      "description": "Located in Hungary, the Budapest Zoo features capybaras among its many animal exhibits.",
+      "location": [47.5187, 19.0836]
+    },
+    {
+      "name": "Lisbon Zoo",
+      "description": "The Lisbon Zoo in Portugal has a capybara exhibit where you can learn about these gentle giants and their social habits.",
+      "location": [38.7510, -9.1677]
+    },
+    {
+      "name": "Copenhagen Zoo",
+      "description": "Copenhagen Zoo in Denmark features capybaras and provides educational information about their natural environment.",
+      "location": [55.6693, 12.5214]
+    },
+    {
+      "name": "Helsinki Zoo",
+      "description": "Helsinki Zoo in Finland has a capybara exhibit where visitors can observe these fascinating animals and learn about their lifestyles.",
+      "location": [60.1756, 24.9684]
+    },
+    {
+      "name": "Zurich Zoo",
+      "description": "The Zurich Zoo in Switzerland features capybaras among its diverse range of animal exhibits.",
+      "location": [47.3845, 8.5734]
+    }
+  ]
